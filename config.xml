@@ -52,7 +52,7 @@
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
         
          
-        <preference name="SplashScreenDelay" value="7500"/>
+        <preference name="SplashScreenDelay" value="9000"/>
        
 
     <feature name="StatusBar">
