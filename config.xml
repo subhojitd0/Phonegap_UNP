@@ -2,17 +2,17 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
-        id        = "com.moodle.moodlemobile"
-        versionCode = "20170"
+        id        = "com.unp.unpmobile"
+        versionCode = "20180"
         version   = "3.2.1">
     <name>Moodle Mobile</name>
 
     <description>
-        Moodle Mobile official app
+        UNP official Mobile app
     </description>
 
-    <author href="http://moodle.com" email="mobile@moodle.com">
-        Moodle Pty Ltd
+    <author href="http://unp.education" email="reachout@unp.education">
+        Vivek
     </author>
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
