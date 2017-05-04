@@ -17001,7 +17001,7 @@ angular.module('mm.core.login')
         var modal = $mmUtil.showModalLoading();
 		
 		var xhttp = new XMLHttpRequest();
-		xhttp.open("GET", "http://courses.unp.education/notify.php?userid=2", true);
+		xhttp.open("GET", "http://courses.unp.education/notify.php?username="+$scope.credentials.username, true);
 		xhttp.send();
 				
         return $mmSitesManager.getUserToken(siteurl, username, password).then(function(data) {
