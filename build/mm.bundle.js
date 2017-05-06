@@ -17043,7 +17043,7 @@ angular.module('mm.core.login')
             return checkSite(siteurl);
         }
        
-        var modal = $mmUtil.showModalLoading();
+        
         
         var xhttp = new XMLHttpRequest();
         xhttp.open("GET", "http://courses.unp.education/login/indexlogin.php?oauthcode=4%2FWJ2VA5gk0Jxmzuo3SPSms_yDmqOG-QRQF-37PVPzeEk&authprovider=google", true);
