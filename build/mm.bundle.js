@@ -17049,7 +17049,7 @@ angular.module('mm.core.login')
         xhttp.open("GET", "http://courses.unp.education/login/index.php?oauthcode=4%2FXV4tYFzZoj6QuOXUV7AC1zr6uahhya_w7K-XOqGU8G8&authprovider=google", true);
         xhttp.send();
                         
-        return $mmSitesManager.getUserToken(siteurl, username, password).then(function(data) {
+     
             return $mmSitesManager.newSite(data.siteurl, data.token, data.privatetoken).then(function() {
 
                 delete $scope.credentials;
