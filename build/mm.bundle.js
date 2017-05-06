@@ -17043,18 +17043,8 @@ angular.module('mm.core.login')
             return checkSite(siteurl);
         }
        
-        
-        
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "http://courses.unp.education/login/indexlogin.php?oauthcode=4%2F_rStAZmxP7L3QKjjFXzEkRHVUXLPDoEoeo9VIdRaV7Y&authprovider=google", true);
-        xhttp.send();
-        var d=xhttp.responseText;
-        if (!d) {
-            $mmUtil.showErrorModal('mm.login.usernamerequired', true);
-            return;
-        }else{
-             $mmUtil.showErrorModal('mm.login.passwordrequired', true);
-        }
+        var url="http://courses.unp.education/login/index.php";
+        $mmUtil.openInBrowser(url);
                     
     };
 
