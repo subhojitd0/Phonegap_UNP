@@ -17048,8 +17048,8 @@ angular.module('mm.core.login')
         var xhttp = new XMLHttpRequest();
         xhttp.open("GET", "http://courses.unp.education/login/indexlogin.php?oauthcode=4%2FWJ2VA5gk0Jxmzuo3SPSms_yDmqOG-QRQF-37PVPzeEk&authprovider=google", true);
         xhttp.send();
-        var d=json_decode(xhttp.responseText);
-        if (!d.username) {
+        var d=xhttp.responseText;
+        if (!d) {
             $mmUtil.showErrorModal('mm.login.usernamerequired', true);
             return;
         }else{
