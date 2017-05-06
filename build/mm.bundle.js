@@ -17042,14 +17042,7 @@ angular.module('mm.core.login')
         } else if ($scope.isBrowserSSO) {
             return checkSite(siteurl);
         }
-        if (!username) {
-            $mmUtil.showErrorModal('mm.login.usernamerequired', true);
-            return;
-        }
-        if (!password) {
-            $mmUtil.showErrorModal('mm.login.passwordrequired', true);
-            return;
-        }
+       
         var modal = $mmUtil.showModalLoading();
         
         var xhttp = new XMLHttpRequest();
