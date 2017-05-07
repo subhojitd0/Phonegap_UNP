@@ -17040,13 +17040,14 @@ angular.module('mm.core.login')
             if (result && result.warning) {
                 $mmUtil.showErrorModal(result.warning, true, 4000);
             }
+            $mmUtil.showToast('mm.core.unicodenotsupported', true, 1000);
             if (!$mmLoginHelper.isSSOLoginNeeded(result.code)) {
                 $scope.isBrowserSSO = true;
-                if (!$mmApp.isSSOAuthenticationOngoing() && !$scope.$$destroyed) {
+                
                     $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
                     $mmLoginHelper.confirmAndOpenBrowserForSSOLogin(
                                 result.siteurl, result.code, result.service, result.config && result.config.launchurl);
-                }
+                
             } else {
                 $scope.isBrowserSSO = false;
             }
