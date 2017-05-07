@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
         id        = "com.unp.unpmobile"
-        versionCode = "20182"
+        versionCode = "20183"
         version   = "3.2.1">
     <name>UNP</name>
 
@@ -91,51 +91,51 @@
     <splash src="resources/ios/splash/Default@2x~iphone.png"          platform="ios" width="640" height="960"/>
     <splash src="resources/ios/splash/Default~iphone.png"             platform="ios" width="320" height="480"/>
 
-    <gap:plugin name="cordova-plugin-camera" source="npm" />
-    <gap:plugin name="cordova-plugin-media-capture" source="npm">
+    <plugin name="cordova-plugin-camera" source="npm" />
+    <plugin name="cordova-plugin-media-capture" source="npm">
         <param name="CAMERA_USAGE_DESCRIPTION" value="We'd like to access your camera to let you take a photo"/>
         <param name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="We'd like to access your photo library to let you pick a photo"/>
         <param name="MICROPHONE_USAGE_DESCRIPTION" value="We'd like to access your microphone to let you record an audio"/>
-    </gap:plugin>
-    <gap:plugin name="cordova-plugin-device" source="npm" />
-    <gap:plugin name="cordova-plugin-file" source="npm" />
-    <gap:plugin name="cordova-plugin-file-transfer" source="npm" />
-    <gap:plugin name="cordova-plugin-globalization" source="npm" />
-    <gap:plugin name="cordova-plugin-inappbrowser" source="npm" />
-    <gap:plugin name="cordova-plugin-network-information" source="npm" />
-    <gap:plugin name="cordova-plugin-statusbar" source="npm" version="2.1.2" />
-    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
-    <gap:plugin name="cordova-plugin-splashscreen" source="npm" />
-    <gap:plugin name="cordova-universal-clipboard" source="npm" />
-    <gap:plugin name="nl.kingsquare.cordova.background-audio" source="npm" />
+    </plugin>
+    <plugin name="cordova-plugin-device" source="npm" />
+    <plugin name="cordova-plugin-file" source="npm" />
+    <plugin name="cordova-plugin-file-transfer" source="npm" />
+    <plugin name="cordova-plugin-globalization" source="npm" />
+    <plugin name="cordova-plugin-inappbrowser" source="npm" />
+    <plugin name="cordova-plugin-network-information" source="npm" />
+    <plugin name="cordova-plugin-statusbar" source="npm" version="2.1.2" />
+    <plugin name="cordova-plugin-whitelist" source="npm" />
+    <plugin name="cordova-plugin-splashscreen" source="npm" />
+    <plugin name="cordova-universal-clipboard" source="npm" />
+    <plugin name="nl.kingsquare.cordova.background-audio" source="npm" />
 
-    <gap:plugin name="phonegap-plugin-push" source="npm" version="1.9.2">
+    <plugin name="phonegap-plugin-push" source="npm" version="1.9.2">
         <param name="SENDER_ID" value="694767596569" />
-    </gap:plugin>
-    <gap:plugin name="cordova-plugin-customurlscheme" source="npm">
+    </plugin>
+    <plugin name="cordova-plugin-customurlscheme" source="npm">
         <param name="URL_SCHEME" value="moodlemobile" />
-    </gap:plugin>
-    <gap:plugin name="ionic-plugin-keyboard" source="npm" />
-    <gap:plugin name="cordova-plugin-zip" source="npm" />
-    <gap:plugin name="cordova-plugin-local-notifications-mm" source="npm" />
-    <gap:plugin name="net.tunts.webintent" spec="https://github.com/Tunts/WebIntent.git" source="git" />
-    <gap:plugin name="ch.ti8m.documenthandler" spec="https://github.com/ti8m/DocumentHandler.git" source="git" />
+    </plugin>
+    <plugin name="ionic-plugin-keyboard" source="npm" />
+    <plugin name="cordova-plugin-zip" source="npm" />
+    <plugin name="cordova-plugin-local-notifications-mm" source="npm" />
+    <plugin name="net.tunts.webintent" spec="https://github.com/Tunts/WebIntent.git" source="git" />
+    <plugin name="ch.ti8m.documenthandler" spec="https://github.com/ti8m/DocumentHandler.git" source="git" />
 
-    <gap:config-file platform="android" parent="/manifest">
+    <config-file platform="android" parent="/manifest">
          <application android:debuggable="true" />
-    </gap:config-file>
+    </config-file>
 
     <!-- See MOBILE-892 -->
     <preference name="permissions" value="none"/>
 
-    <gap:config-file platform="android" parent="/manifest" mode="delete">
+    <config-file platform="android" parent="/manifest" mode="delete">
         <uses-permission android:name="android.permission.WRITE_CONTACTS" />
         <uses-permission android:name="android.permission.READ_CONTACTS" />
         <uses-permission android:name="android.permission.GET_ACCOUNTS" />
         <uses-permission android:name="android.permission.VIBRATE"/>
-    </gap:config-file>
+    </config-file>
 
-    <gap:config-file platform="ios" parent="CFBundleDocumentTypes" mode="add">
+    <config-file platform="ios" parent="CFBundleDocumentTypes" mode="add">
         <array>
             <dict>
                 <key>CFBundleTypeName</key>
@@ -513,12 +513,12 @@
                 </array>
             </dict>
         </array>
-    </gap:config-file>
+    </config-file>
 
-    <gap:config-file platform="ios" parent="NSAppTransportSecurity" mode="add">
+    <config-file platform="ios" parent="NSAppTransportSecurity" mode="add">
         <dict>
             <key>NSAllowsArbitraryLoads</key><true/>
         </dict>
-    </gap:config-file>
+    </config-file>
 
 </widget>
