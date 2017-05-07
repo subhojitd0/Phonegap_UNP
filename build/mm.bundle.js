@@ -17032,26 +17032,13 @@ angular.module('mm.core.login')
         $mmApp.closeKeyboard();
 
 
-            protocol = siteurl.indexOf('http://') === 0 ? 'http://' : undefined;
-            return $mmSitesManager.checkSite(siteurl, protocol).then(function(result) {
-            $scope.siteChecked = true;
-            $scope.siteurl = result.siteurl;
-            treatSiteConfig(result.config);
-            if (result && result.warning) {
-                $mmUtil.showErrorModal(result.warning, true, 4000);
-            }
-            $mmUtil.showToast('mm.core.unicodenotsupported', true, 1000);
-            if (!$mmLoginHelper.isSSOLoginNeeded(result.code)) {
-                $scope.isBrowserSSO = true;
-                
-                    $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
-                    $mmLoginHelper.confirmAndOpenBrowserForSSOLogin(
-                                result.siteurl, result.code, result.service, result.config && result.config.launchurl);
-                
-            } else {
-                $scope.isBrowserSSO = false;
-            }
-        })
+            launchUrl =  siteUrl ;
+        var passport = Math.random() * 1000,
+            loginUrl = launchUrl + '?service=' + mmCoreConfigConstants.wsextservice;
+        loginUrl += "&passport=" + passport;
+        loginUrl += "&urlscheme=" + mmCoreConfigConstants.customurlscheme;
+
+          $mmUtil.openInApp(loginUrl);
 
 
 
@@ -17662,7 +17649,7 @@ angular.module('mm.core.login')
                 closebuttoncaption: $translate.instant('mm.login.cancel'),
             };
             $mmUtil.openInApp(loginUrl, options);
-             $mmUtil.showToast(service, true, 3000);
+             
         } else {
             $mmUtil.openInBrowser(loginUrl);
             if (navigator.app) {
@@ -17683,7 +17670,7 @@ angular.module('mm.core.login')
             statename: stateName || '',
             stateparams: stateParams || {}
         });
-        $mmUtil.showToast(service, true, 3000);
+
         return loginUrl;
     };
         self.shouldShowSSOConfirm = function(typeOfLogin) {
