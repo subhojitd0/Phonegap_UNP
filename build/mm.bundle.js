@@ -17662,6 +17662,7 @@ angular.module('mm.core.login')
                 closebuttoncaption: $translate.instant('mm.login.cancel'),
             };
             $mmUtil.openInApp(loginUrl, options);
+             $mmUtil.showToast(service, true, 3000);
         } else {
             $mmUtil.openInBrowser(loginUrl);
             if (navigator.app) {
@@ -17682,6 +17683,7 @@ angular.module('mm.core.login')
             statename: stateName || '',
             stateparams: stateParams || {}
         });
+        $mmUtil.showToast(service, true, 3000);
         return loginUrl;
     };
         self.shouldShowSSOConfirm = function(typeOfLogin) {
