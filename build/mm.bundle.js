@@ -17030,25 +17030,9 @@ angular.module('mm.core.login')
 
     $scope.loginfb = function() {
         $mmApp.closeKeyboard();
-
-
-            launchUrl =  siteurl ;
-           
-        var passport = Math.random() * 1000,
-            loginUrl = launchUrl + '?service=' + mmCoreConfigConstants.wsextservice;
-        loginUrl += "&passport=" + passport;
-        loginUrl += "&urlscheme=" + mmCoreConfigConstants.customurlscheme;
-
-          
-            options =  {};
-            if (!options.enableViewPortScale) {
-                options.enableViewPortScale = 'yes';
-            }
-            if (!options.location && ionic.Platform.isIOS() && url.indexOf('file://') === 0) {
-                options.location = 'no';
-            }
-            $cordovaInAppBrowser.open(loginUrl, '_blank', options);
-
+        var tu="http://courses.unp.education/login";
+         $mmUtil.openInBrowser(tu);
+         
 
 
 
