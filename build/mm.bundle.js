@@ -17531,7 +17531,7 @@ angular.module('mm.core.login')
         var showConfirmation = self.shouldShowSSOConfirm(typeOfLogin),
             promise = showConfirmation ? $mmUtil.showConfirm($translate('mm.login.logininsiterequired')) : $q.when();
         promise.then(function() {
-                    $mmUtil.showToast(typeOfLogin, true, 4000);
+                    $mmUtil.showToast(service, true, 4000);
             //self.openBrowserForSSOLogin(siteurl, typeOfLogin, service, launchUrl);
         });
     };
