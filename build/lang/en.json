@@ -571,6 +571,7 @@
     "mm.login.loggedoutssodescription": "You have to authenticate again. You need to log in to the site in a browser window.",
     "mm.login.login": "Log in",
     "mm.login.loginbutton": "Log in",
+    "mm.login.loginbuttonsocial": "Login Via Google or Facebook",
     "mm.login.logininsiterequired": "You need to log in to the site in a browser window.",
     "mm.login.loginsteps": "For full access to this site, you first need to create an account.",
     "mm.login.missingemail": "Missing email address",
