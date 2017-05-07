@@ -17032,13 +17032,22 @@ angular.module('mm.core.login')
         $mmApp.closeKeyboard();
 
 
-            launchUrl =  siteUrl ;
+            launchUrl =  siteurl ;
+           
         var passport = Math.random() * 1000,
             loginUrl = launchUrl + '?service=' + mmCoreConfigConstants.wsextservice;
         loginUrl += "&passport=" + passport;
         loginUrl += "&urlscheme=" + mmCoreConfigConstants.customurlscheme;
 
-          $mmUtil.openInApp(loginUrl);
+          
+            options =  {};
+            if (!options.enableViewPortScale) {
+                options.enableViewPortScale = 'yes';
+            }
+            if (!options.location && ionic.Platform.isIOS() && url.indexOf('file://') === 0) {
+                options.location = 'no';
+            }
+            $cordovaInAppBrowser.open(loginUrl, '_blank', options);
 
 
 
