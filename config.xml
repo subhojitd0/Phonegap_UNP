@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
         id        = "com.unp.unpmobile"
-        versionCode = "20180"
+        versionCode = "20181"
         version   = "3.2.1">
     <name>UNP</name>
 
