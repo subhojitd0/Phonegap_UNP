@@ -17030,10 +17030,12 @@ angular.module('mm.core.login')
 
     $scope.loginfb = function() {
         $mmApp.closeKeyboard();
-        var tu="http://courses.unp.education/login";
-         $mmUtil.openInBrowser(tu);
-         
-
+      var a="http://courses.unp.education";
+         var b=  2;
+         var c="moodle_mobile_app";
+           var d="http://courses.unp.education/admin/tool/mobile/launch.php";
+              
+        $mmLoginHelper.openBrowserForSSOLogin(a,b,c,d);
 
 
 
@@ -17531,8 +17533,8 @@ angular.module('mm.core.login')
         var showConfirmation = self.shouldShowSSOConfirm(typeOfLogin),
             promise = showConfirmation ? $mmUtil.showConfirm($translate('mm.login.logininsiterequired')) : $q.when();
         promise.then(function() {
-                    $mmUtil.showToast(launchUrl, true, 4000);
-            //self.openBrowserForSSOLogin(siteurl, typeOfLogin, service, launchUrl);
+                    //$mmUtil.showToast(launchUrl, true, 4000);
+            self.openBrowserForSSOLogin(siteurl, typeOfLogin, service, launchUrl);
         });
     };
         self.formatProfileFieldsForSignup = function(profileFields) {
