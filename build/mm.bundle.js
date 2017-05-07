@@ -17030,57 +17030,7 @@ angular.module('mm.core.login')
 
     $scope.loginfb = function() {
         $mmApp.closeKeyboard();
-        var siteurl = $scope.siteurl,
-            username = $scope.credentials.username,
-            password = $scope.credentials.password;
-        if (!$scope.siteChecked) {
-            return checkSite(siteurl).then(function() {
-                if (!$scope.isBrowserSSO) {
-                    return $scope.login();
-                }
-            });
-        } else if ($scope.isBrowserSSO) {
-            return checkSite(siteurl);
-        }
-       
-        var url="http://courses.unp.education/login/index.php";
-        var ssoScheme = mmCoreConfigConstants.customurlscheme + '://token=';
-        if (url.indexOf(ssoScheme) == -1) {
-            return false;
-        }
-        if ($mmApp.isSSOAuthenticationOngoing()) {
-            return true;
-        }
-        $mmApp.startSSOAuthentication();
-        $log.debug('App launched by URL');
-        var modal = $mmUtil.showModalLoading('mm.login.authenticating', true),
-            siteData;
-        url = url.replace(ssoScheme, '');
-        try {
-            url = atob(url);
-        } catch(err) {
-            $log.error('Error decoding parameter received for login SSO');
-            return false;
-        }
-        $mmApp.ready().then(function() {
-            return $mmLoginHelper.validateBrowserSSOLogin(url);
-        }).then(function(data) {
-            siteData = data;
-            return $mmLoginHelper.handleSSOLoginAuthentication(siteData.siteurl, siteData.token, siteData.privateToken);
-        }).then(function() {
-            if (siteData.statename) {
-                $state.go(siteData.statename, siteData.stateparams);
-            } else {
-                $mmLoginHelper.goToSiteInitialPage();
-            }
-        }).catch(function(errorMessage) {
-            if (typeof errorMessage === 'string' && errorMessage !== '') {
-                $mmUtil.showErrorModal(errorMessage);
-            }
-        }).finally(function() {
-            modal.dismiss();
-            $mmApp.finishSSOAuthentication();
-        });
+        $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
                     
     };
 
