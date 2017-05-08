@@ -52,7 +52,7 @@
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
         
          
-        <preference name="SplashScreenDelay" value="10000"/>
+        
         <preference name="SplashShowOnlyFirstTime" value="false"/>
        
 
