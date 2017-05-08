@@ -53,6 +53,7 @@
         
          
         <preference name="SplashScreenDelay" value="10000"/>
+        <preference name="SplashShowOnlyFirstTime" value="false"/>
        
 
     <feature name="StatusBar">
