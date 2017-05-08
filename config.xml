@@ -14,12 +14,12 @@
         Vivek
     </author>
 
-    <gap:config-file platform="ios" parent="CFBundleShortVersionString">
+    <config-file platform="ios" parent="CFBundleShortVersionString">
         <string>3.2.1</string>
-    </gap:config-file>
+    </config-file>
 
-    <gap:platform name="ios" />
-    <gap:platform name="android" />
+    <platform name="ios" />
+    <platform name="android" />
 
     <access origin="*" />
     <access origin="tel:*" launch-external="yes" />
@@ -34,7 +34,7 @@
     <allow-intent href="*" />
 
     <preference name="phonegap-version" value="cli-6.3.0" />
-    <preference name="android-versionCode" value="39232" />
+    <preference name="android-versionCode" value="39233" />
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
