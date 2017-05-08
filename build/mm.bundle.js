@@ -17030,7 +17030,7 @@ angular.module('mm.core.login')
 
     $scope.loginfb = function() {
         $mmApp.closeKeyboard();
-      var a="http://courses.unp.education/mobilesocial";
+      var a="http://courses.unp.education";
          var b=  2;
          var c="moodle_mobile_app";
            var d="http://courses.unp.education/admin/tool/mobile/launch.php";
