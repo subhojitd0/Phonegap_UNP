@@ -17034,8 +17034,7 @@ angular.module('mm.core.login')
          var b=  2;
          var c="moodle_mobile_app";
             $mmLoginHelper.openBrowserForSSOLogin(a,b,c,d);
-          $state.go('mm_login.site');  
-        
+          
 
        
 
