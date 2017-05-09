@@ -17034,7 +17034,7 @@ angular.module('mm.core.login')
          var b=  2;
          var c="moodle_mobile_app";
            var d="http://courses.unp.education/admin/tool/mobile/launch.php";
-              
+          mmLoginSSOCode=2    
         $mmLoginHelper.openBrowserForSSOLogin(a,b,c,d);
 
        
