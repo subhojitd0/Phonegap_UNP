@@ -17031,10 +17031,10 @@ angular.module('mm.core.login')
     $scope.loginfb = function() {
         $mmApp.closeKeyboard();
       var a="http://courses.unp.education";
-         var b=  1;
+         var b=  2;
          var c="moodle_mobile_app";
-           var d="http://courses.unp.education/admin/tool/mobile/launch.php";
-          mmLoginSSOCode=1;    
+            
+          $state.go('mm_login.site');  
         $mmLoginHelper.openBrowserForSSOLogin(a,b,c,d);
 
        
