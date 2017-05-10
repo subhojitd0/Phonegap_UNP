@@ -17037,7 +17037,7 @@ angular.module('mm.core.login')
           
           
         $mmLoginHelper.openBrowserForSSOLogin(a,b,c,d);
-           
+           $state.go('mm_login.sites');
        
 
 
