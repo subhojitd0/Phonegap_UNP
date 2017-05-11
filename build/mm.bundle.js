@@ -11117,14 +11117,14 @@ angular.module('mm.core.login', [])
 angular.module('mm.core.question', [])
 .constant('mmQuestionComponent', 'mmQuestion')
 .run(["$mmEvents", "mmCoreEventLogin", "mmCoreEventSiteUpdated", "$mmQuestionDelegate", "$mmQuestionBehaviourDelegate", "mmCoreEventRemoteAddonsLoaded", function($mmEvents, mmCoreEventLogin, mmCoreEventSiteUpdated, $mmQuestionDelegate, $mmQuestionBehaviourDelegate,
-			mmCoreEventRemoteAddonsLoaded) {
-	function updateHandlers() {
-		$mmQuestionDelegate.updateQuestionHandlers();
-		$mmQuestionBehaviourDelegate.updateQuestionBehaviourHandlers();
-	}
-	$mmEvents.on(mmCoreEventLogin, updateHandlers);
-	$mmEvents.on(mmCoreEventSiteUpdated, updateHandlers);
-	$mmEvents.on(mmCoreEventRemoteAddonsLoaded, updateHandlers);
+            mmCoreEventRemoteAddonsLoaded) {
+    function updateHandlers() {
+        $mmQuestionDelegate.updateQuestionHandlers();
+        $mmQuestionBehaviourDelegate.updateQuestionBehaviourHandlers();
+    }
+    $mmEvents.on(mmCoreEventLogin, updateHandlers);
+    $mmEvents.on(mmCoreEventSiteUpdated, updateHandlers);
+    $mmEvents.on(mmCoreEventRemoteAddonsLoaded, updateHandlers);
 }]);
 
 angular.module('mm.core.settings', [])
@@ -14670,7 +14670,7 @@ angular.module('mm.core.courses')
 angular.module('mm.core.courses')
 .controller('mmCoursesSearchCtrl', ["$scope", "$mmCourses", "$q", "$mmUtil", function($scope, $mmCourses, $q, $mmUtil) {
     var page = 0,
-    	currentSearch = '';
+        currentSearch = '';
     $scope.searchText = '';
     function searchCourses(refresh) {
         if (refresh) {
@@ -14694,13 +14694,13 @@ angular.module('mm.core.courses')
     $scope.search = function(text) {
         currentSearch = text;
         $scope.courses = undefined;
-    	var modal = $mmUtil.showModalLoading('mm.core.searching', true);
-    	searchCourses(true).finally(function() {
+        var modal = $mmUtil.showModalLoading('mm.core.searching', true);
+        searchCourses(true).finally(function() {
             modal.dismiss();
-    	});
+        });
     };
     $scope.loadMoreResults = function() {
-    	searchCourses();
+        searchCourses();
     };
 }]);
 
@@ -16999,11 +16999,11 @@ angular.module('mm.core.login')
             return;
         }
         var modal = $mmUtil.showModalLoading();
-		
-		var xhttp = new XMLHttpRequest();
-		xhttp.open("GET", "http://courses.unp.education/notify.php?username="+$scope.credentials.username, true);
-		xhttp.send();
-				
+        
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "http://courses.unp.education/notify.php?username="+$scope.credentials.username, true);
+        xhttp.send();
+                
         return $mmSitesManager.getUserToken(siteurl, username, password).then(function(data) {
             return $mmSitesManager.newSite(data.siteurl, data.token, data.privatetoken).then(function() {
                 delete $scope.credentials;
@@ -17037,8 +17037,7 @@ angular.module('mm.core.login')
           
           
         $mmLoginHelper.openBrowserForSSOLogin(a,b,c,d);
-           $state.go('mm_login.sites');
-       
+
 
 
         
@@ -20753,7 +20752,7 @@ angular.module('mm.addons.messageoutput_airnotifier', [])
     .state('site.messageoutput-airnotifier-preferences', {
         url: '/messageoutput-airnotifier-preferences',
         params: {
-        	title: null
+            title: null
         },
         views: {
             'site': {
@@ -21498,55 +21497,55 @@ angular.module('mm.addons.qbehaviour_adaptive', ['mm.core'])
 angular.module('mm.addons.qbehaviour_adaptivenopenalty', ['mm.core'])
 .config(["$mmQuestionBehaviourDelegateProvider", function($mmQuestionBehaviourDelegateProvider) {
     $mmQuestionBehaviourDelegateProvider.registerHandler('mmaQbehaviourAdaptiveNoPenalty', 'adaptivenopenalty',
-    			'$mmaQbehaviourAdaptiveNoPenaltyHandler');
+                '$mmaQbehaviourAdaptiveNoPenaltyHandler');
 }]);
 
 angular.module('mm.addons.qbehaviour_deferredfeedback', ['mm.core'])
 .config(["$mmQuestionBehaviourDelegateProvider", function($mmQuestionBehaviourDelegateProvider) {
     $mmQuestionBehaviourDelegateProvider.registerHandler('mmaQbehaviourDeferredFeedback', 'deferredfeedback',
-    			'$mmaQbehaviourDeferredFeedbackHandler');
+                '$mmaQbehaviourDeferredFeedbackHandler');
 }]);
 
 angular.module('mm.addons.qbehaviour_deferredcbm', ['mm.core'])
 .config(["$mmQuestionBehaviourDelegateProvider", function($mmQuestionBehaviourDelegateProvider) {
     $mmQuestionBehaviourDelegateProvider.registerHandler('mmaQbehaviourDeferredCBM', 'deferredcbm',
-    			'$mmaQbehaviourDeferredCBMHandler');
+                '$mmaQbehaviourDeferredCBMHandler');
 }]);
 
 angular.module('mm.addons.qbehaviour_immediatecbm', ['mm.core'])
 .config(["$mmQuestionBehaviourDelegateProvider", function($mmQuestionBehaviourDelegateProvider) {
     $mmQuestionBehaviourDelegateProvider.registerHandler('mmaQbehaviourImmediateCBM', 'immediatecbm',
-    			'$mmaQbehaviourImmediateCBMHandler');
+                '$mmaQbehaviourImmediateCBMHandler');
 }]);
 
 angular.module('mm.addons.qbehaviour_immediatefeedback', ['mm.core'])
 .config(["$mmQuestionBehaviourDelegateProvider", function($mmQuestionBehaviourDelegateProvider) {
     $mmQuestionBehaviourDelegateProvider.registerHandler('mmaQbehaviourImmediateFeedback', 'immediatefeedback',
-    			'$mmaQbehaviourImmediateFeedbackHandler');
+                '$mmaQbehaviourImmediateFeedbackHandler');
 }]);
 
 angular.module('mm.addons.qbehaviour_informationitem', ['mm.core'])
 .config(["$mmQuestionBehaviourDelegateProvider", function($mmQuestionBehaviourDelegateProvider) {
     $mmQuestionBehaviourDelegateProvider.registerHandler('mmaQbehaviourInformationItem', 'informationitem',
-    			'$mmaQbehaviourInformationItemHandler');
+                '$mmaQbehaviourInformationItemHandler');
 }]);
 
 angular.module('mm.addons.qbehaviour_interactive', ['mm.core'])
 .config(["$mmQuestionBehaviourDelegateProvider", function($mmQuestionBehaviourDelegateProvider) {
     $mmQuestionBehaviourDelegateProvider.registerHandler('mmaQbehaviourInteractive', 'interactive',
-    			'$mmaQbehaviourInteractiveHandler');
+                '$mmaQbehaviourInteractiveHandler');
 }]);
 
 angular.module('mm.addons.qbehaviour_interactivecountback', ['mm.core'])
 .config(["$mmQuestionBehaviourDelegateProvider", function($mmQuestionBehaviourDelegateProvider) {
     $mmQuestionBehaviourDelegateProvider.registerHandler('mmaQbehaviourInteractiveCountback', 'interactivecountback',
-    			'$mmaQbehaviourInteractiveCountbackHandler');
+                '$mmaQbehaviourInteractiveCountbackHandler');
 }]);
 
 angular.module('mm.addons.qbehaviour_manualgraded', ['mm.core'])
 .config(["$mmQuestionBehaviourDelegateProvider", function($mmQuestionBehaviourDelegateProvider) {
     $mmQuestionBehaviourDelegateProvider.registerHandler('mmaQbehaviourManualGraded', 'manualgraded',
-    			'$mmaQbehaviourManualGradedHandler');
+                '$mmaQbehaviourManualGradedHandler');
 }]);
 
 angular.module('mm.addons.qtype_calculated', ['mm.core'])
@@ -21557,13 +21556,13 @@ angular.module('mm.addons.qtype_calculated', ['mm.core'])
 angular.module('mm.addons.qtype_calculatedsimple', ['mm.core'])
 .config(["$mmQuestionDelegateProvider", function($mmQuestionDelegateProvider) {
     $mmQuestionDelegateProvider.registerHandler('mmaQtypeCalculatedSimple', 'qtype_calculatedsimple',
-    												'$mmaQtypeCalculatedSimpleHandler');
+                                                    '$mmaQtypeCalculatedSimpleHandler');
 }]);
 
 angular.module('mm.addons.qtype_calculatedmulti', ['mm.core'])
 .config(["$mmQuestionDelegateProvider", function($mmQuestionDelegateProvider) {
     $mmQuestionDelegateProvider.registerHandler('mmaQtypeCalculatedMulti', 'qtype_calculatedmulti',
-    												'$mmaQtypeCalculatedMultiHandler');
+                                                    '$mmaQtypeCalculatedMultiHandler');
 }]);
 
 angular.module('mm.addons.qtype_ddimageortext', ['mm.core'])
@@ -21634,31 +21633,31 @@ angular.module('mm.addons.qtype_truefalse', ['mm.core'])
 angular.module('mm.addons.userprofilefield_checkbox', ['mm.core'])
 .config(["$mmUserProfileFieldsDelegateProvider", function($mmUserProfileFieldsDelegateProvider) {
     $mmUserProfileFieldsDelegateProvider.registerHandler('mmaUserProfileFieldCheckbox',
-    		'checkbox', '$mmaUserProfileFieldCheckboxHandler');
+            'checkbox', '$mmaUserProfileFieldCheckboxHandler');
 }]);
 
 angular.module('mm.addons.userprofilefield_datetime', ['mm.core'])
 .config(["$mmUserProfileFieldsDelegateProvider", function($mmUserProfileFieldsDelegateProvider) {
     $mmUserProfileFieldsDelegateProvider.registerHandler('mmaUserProfileFieldDatetime',
-    		'datetime', '$mmaUserProfileFieldDatetimeHandler');
+            'datetime', '$mmaUserProfileFieldDatetimeHandler');
 }]);
 
 angular.module('mm.addons.userprofilefield_menu', ['mm.core'])
 .config(["$mmUserProfileFieldsDelegateProvider", function($mmUserProfileFieldsDelegateProvider) {
     $mmUserProfileFieldsDelegateProvider.registerHandler('mmaUserProfileFieldMenu',
-    		'menu', '$mmaUserProfileFieldMenuHandler');
+            'menu', '$mmaUserProfileFieldMenuHandler');
 }]);
 
 angular.module('mm.addons.userprofilefield_text', ['mm.core'])
 .config(["$mmUserProfileFieldsDelegateProvider", function($mmUserProfileFieldsDelegateProvider) {
     $mmUserProfileFieldsDelegateProvider.registerHandler('mmaUserProfileFieldText',
-    		'text', '$mmaUserProfileFieldTextHandler');
+            'text', '$mmaUserProfileFieldTextHandler');
 }]);
 
 angular.module('mm.addons.userprofilefield_textarea', ['mm.core'])
 .config(["$mmUserProfileFieldsDelegateProvider", function($mmUserProfileFieldsDelegateProvider) {
     $mmUserProfileFieldsDelegateProvider.registerHandler('mmaUserProfileFieldTextarea',
-    		'textarea', '$mmaUserProfileFieldTextareaHandler');
+            'textarea', '$mmaUserProfileFieldTextareaHandler');
 }]);
 
 angular.module('mm.addons.mod_assign')
@@ -27536,7 +27535,7 @@ angular.module('mm.addons.qbehaviour_manualgraded')
 
 angular.module('mm.addons.qtype_calculated')
 .directive('mmaQtypeCalculated', ["$log", "$mmQuestionHelper", function($log, $mmQuestionHelper) {
-	$log = $log.getInstance('mmaQtypeCalculated');
+    $log = $log.getInstance('mmaQtypeCalculated');
     return {
         restrict: 'A',
         priority: 100,
@@ -27570,13 +27569,13 @@ angular.module('mm.addons.qtype_calculated')
 
 angular.module('mm.addons.qtype_calculatedmulti')
 .directive('mmaQtypeCalculatedMulti', ["$log", "$mmQuestionHelper", function($log, $mmQuestionHelper) {
-	$log = $log.getInstance('mmaQtypeCalculatedMulti');
+    $log = $log.getInstance('mmaQtypeCalculatedMulti');
     return {
         restrict: 'A',
         priority: 100,
         templateUrl: 'addons/qtype/multichoice/template.html',
         link: function(scope) {
-        	$mmQuestionHelper.multiChoiceDirective(scope, $log);
+            $mmQuestionHelper.multiChoiceDirective(scope, $log);
         }
     };
 }]);
@@ -27604,7 +27603,7 @@ angular.module('mm.addons.qtype_calculatedmulti')
 
 angular.module('mm.addons.qtype_calculatedsimple')
 .directive('mmaQtypeCalculatedSimple', ["$log", "$mmQuestionHelper", function($log, $mmQuestionHelper) {
-	$log = $log.getInstance('mmaQtypeCalculatedSimple');
+    $log = $log.getInstance('mmaQtypeCalculatedSimple');
     return {
         restrict: 'A',
         priority: 100,
@@ -27638,7 +27637,7 @@ angular.module('mm.addons.qtype_calculatedsimple')
 
 angular.module('mm.addons.qtype_ddimageortext')
 .directive('mmaQtypeDdimageortext', ["$log", "$mmQuestionHelper", "$mmaQtypeDdimageortextRender", "$timeout", "$mmUtil", function($log, $mmQuestionHelper, $mmaQtypeDdimageortextRender, $timeout, $mmUtil) {
-	$log = $log.getInstance('mmaQtypeDdimageortext');
+    $log = $log.getInstance('mmaQtypeDdimageortext');
     return {
         restrict: 'A',
         priority: 100,
@@ -28771,7 +28770,7 @@ angular.module('mm.addons.qtype_ddmarker')
 }]);
 angular.module('mm.addons.qtype_ddwtos')
 .directive('mmaQtypeDdwtos', ["$log", "$mmQuestionHelper", "$mmaQtypeDdwtosRender", "$timeout", "$mmUtil", function($log, $mmQuestionHelper, $mmaQtypeDdwtosRender, $timeout, $mmUtil) {
-	$log = $log.getInstance('mmaQtypeDdwtos');
+    $log = $log.getInstance('mmaQtypeDdwtos');
     return {
         restrict: 'A',
         priority: 100,
@@ -29165,7 +29164,7 @@ angular.module('mm.addons.qtype_ddwtos')
 }]);
 angular.module('mm.addons.qtype_description')
 .directive('mmaQtypeDescription', ["$log", "$mmQuestionHelper", function($log, $mmQuestionHelper) {
-	$log = $log.getInstance('mmaQtypeDescription');
+    $log = $log.getInstance('mmaQtypeDescription');
     return {
         restrict: 'A',
         priority: 100,
@@ -29206,7 +29205,7 @@ angular.module('mm.addons.qtype_description')
 
 angular.module('mm.addons.qtype_essay')
 .directive('mmaQtypeEssay', ["$log", "$mmQuestionHelper", "$mmText", "$mmUtil", function($log, $mmQuestionHelper, $mmText, $mmUtil) {
-	$log = $log.getInstance('mmaQtypeEssay');
+    $log = $log.getInstance('mmaQtypeEssay');
     return {
         restrict: 'A',
         priority: 100,
@@ -29286,7 +29285,7 @@ angular.module('mm.addons.qtype_essay')
 
 angular.module('mm.addons.qtype_gapselect')
 .directive('mmaQtypeGapSelect', ["$log", "$mmQuestionHelper", "$mmUtil", function($log, $mmQuestionHelper, $mmUtil) {
-	$log = $log.getInstance('mmaQtypeGapSelect');
+    $log = $log.getInstance('mmaQtypeGapSelect');
     return {
         restrict: 'A',
         priority: 100,
@@ -29355,7 +29354,7 @@ angular.module('mm.addons.qtype_gapselect')
 
 angular.module('mm.addons.qtype_match')
 .directive('mmaQtypeMatch', ["$log", "$mmQuestionHelper", function($log, $mmQuestionHelper) {
-	$log = $log.getInstance('mmaQtypeMatch');
+    $log = $log.getInstance('mmaQtypeMatch');
     return {
         restrict: 'A',
         priority: 100,
@@ -29407,7 +29406,7 @@ angular.module('mm.addons.qtype_match')
 
 angular.module('mm.addons.qtype_multianswer')
 .directive('mmaQtypeMultianswer', ["$log", "$mmQuestionHelper", "$mmUtil", function($log, $mmQuestionHelper, $mmUtil) {
-	$log = $log.getInstance('mmaQtypeMultianswer');
+    $log = $log.getInstance('mmaQtypeMultianswer');
     return {
         restrict: 'A',
         priority: 100,
@@ -29486,13 +29485,13 @@ angular.module('mm.addons.qtype_multianswer')
 
 angular.module('mm.addons.qtype_multichoice')
 .directive('mmaQtypeMultichoice', ["$log", "$mmQuestionHelper", function($log, $mmQuestionHelper) {
-	$log = $log.getInstance('mmaQtypeMultichoice');
+    $log = $log.getInstance('mmaQtypeMultichoice');
     return {
         restrict: 'A',
         priority: 100,
         templateUrl: 'addons/qtype/multichoice/template.html',
         link: function(scope) {
-        	$mmQuestionHelper.multiChoiceDirective(scope, $log);
+            $mmQuestionHelper.multiChoiceDirective(scope, $log);
         }
     };
 }]);
@@ -29557,7 +29556,7 @@ angular.module('mm.addons.qtype_multichoice')
 
 angular.module('mm.addons.qtype_numerical')
 .directive('mmaQtypeNumerical', ["$log", "$mmQuestionHelper", function($log, $mmQuestionHelper) {
-	$log = $log.getInstance('mmaQtypeNumerical');
+    $log = $log.getInstance('mmaQtypeNumerical');
     return {
         restrict: 'A',
         priority: 100,
@@ -29611,7 +29610,7 @@ angular.module('mm.addons.qtype_numerical')
 
 angular.module('mm.addons.qtype_randomsamatch')
 .directive('mmaQtypeRandomSaMatch', ["$log", "$mmQuestionHelper", function($log, $mmQuestionHelper) {
-	$log = $log.getInstance('mmaQtypeRandomSaMatch');
+    $log = $log.getInstance('mmaQtypeRandomSaMatch');
     return {
         restrict: 'A',
         priority: 100,
@@ -29645,7 +29644,7 @@ angular.module('mm.addons.qtype_randomsamatch')
 
 angular.module('mm.addons.qtype_shortanswer')
 .directive('mmaQtypeShortAnswer', ["$log", "$mmQuestionHelper", function($log, $mmQuestionHelper) {
-	$log = $log.getInstance('mmaQtypeShortAnswer');
+    $log = $log.getInstance('mmaQtypeShortAnswer');
     return {
         restrict: 'A',
         priority: 100,
@@ -29679,13 +29678,13 @@ angular.module('mm.addons.qtype_shortanswer')
 
 angular.module('mm.addons.qtype_truefalse')
 .directive('mmaQtypeTruefalse', ["$log", "$mmQuestionHelper", function($log, $mmQuestionHelper) {
-	$log = $log.getInstance('mmaQtypeTruefalse');
+    $log = $log.getInstance('mmaQtypeTruefalse');
     return {
         restrict: 'A',
         priority: 100,
         templateUrl: 'addons/qtype/multichoice/template.html',
         link: function(scope) {
-        	$mmQuestionHelper.multiChoiceDirective(scope, $log);
+            $mmQuestionHelper.multiChoiceDirective(scope, $log);
         }
     };
 }]);
@@ -51911,25 +51910,25 @@ angular.module('mm.core')
 .constant('mmCoreConfigConstants', {
     "app_id" : "com.unp.unpmobile",
     "appname": "UNP",
-    "versioncode" : "20180",
+    "versioncode" : "35501",
     "versionname" : "3.2.1",
     "cache_expiration_time" : 300000,
-	"plugins" : ["notifications", "messages", "upload", "events", "myfiles", "contents", "participants", "grades","addcontact", "addnote", "sendmessage", "forum", "label", "url", "page", "resource"],
+    "plugins" : ["notifications", "messages", "upload", "events", "myfiles", "contents", "participants", "grades","addcontact", "addnote", "sendmessage", "forum", "label", "url", "page", "resource"],
     "default_lang" : "en",
     "languages": {"ar": "عربي", "bg": "Български", "ca": "Català", "cs": "Čeština", "da": "Dansk", "de": "Deutsch","en": "English", "es": "Español", "es-mx": "Español - México", "eu": "Euskara", "fa": "فارسی", "fr" : "Français", "he" : "עברית", "hu": "magyar", "it": "Italiano", "ja": "日本語","nl": "Nederlands", "pl": "Polski", "pt-br": "Português - Brasil", "pt": "Português - Portugal", "ro": "Română", "ru": "Русский", "sv": "Svenska", "tr" : "Türkçe", "zh-cn" : "简体中文", "zh-tw" : "正體中文"},
     "wsservice" : "moodle_mobile_app",
     "wsextservice" : "local_mobile",
     "gcmpn": "940318075314",
     "customurlscheme": "moodlemobile",
-	"presets" : {"url": "http://courses.unp.education", "username": ""},
+    "presets" : {"url": "http://courses.unp.education", "username": ""},
     "siteurl": "http://courses.unp.education",
     "sync_ws_on" : true,
-	"sync_css_on" : true,
-	"sync_cron": 300000,
-	"log_length" : 100,
-	"dev_debug": false,
-	"extra_js": [],
-	"demo_sites": [],
-	"notifications_enabled": true
+    "sync_css_on" : true,
+    "sync_cron": 300000,
+    "log_length" : 100,
+    "dev_debug": false,
+    "extra_js": [],
+    "demo_sites": [],
+    "notifications_enabled": true
 }
 );
