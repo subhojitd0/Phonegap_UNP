@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         xmlns:android = "http://schemas.android.com/apk/res/android"
         id        = "com.unp.unpmobile"
-        version   = "3.2.1">
+        version   = "1.0.0">
     <name>UNP</name>
 
     <description>
@@ -15,7 +15,7 @@
     </author>
 
     <config-file platform="ios" parent="CFBundleShortVersionString">
-        <string>3.2.1</string>
+        <string>1.0.0</string>
     </config-file>
 
     <platform name="ios" />
@@ -33,8 +33,8 @@
 
     <allow-intent href="*" />
 
-    <preference name="phonegap-version" value="cli-6.3.0" />
-    <preference name="android-versionCode" value="39235" />
+    <preference name="phonegap-version" value="cli-6.5.0" />
+    <preference name="android-versionCode" value="35501" />
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
