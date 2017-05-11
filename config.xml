@@ -523,7 +523,7 @@
     </config-file>
         
     <config-file platform="android" parent="/manifest" mode="merge">
-        <application android:debuggable="true"/>
+        <application android:debuggable="false"/>
      </config-file>
 
 </widget>
