@@ -20713,7 +20713,7 @@ angular.module('mm.addons.pushnotifications', [])
         $mmaPushNotifications.onMessageReceived(notification);
     });
     $mmEvents.on(mmCoreEventLogin, function() {
-        $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
+        
         $mmaPushNotifications.registerDeviceOnMoodle();
     });
     $mmEvents.on(mmCoreEventSiteDeleted, function(site) {
