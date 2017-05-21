@@ -3675,7 +3675,7 @@ angular.module('mm.core')
             loadCustomStrings();
 
         }
-         $mmUtil.showToast('mm.core.unicodenotsupported', true, 8000);
+
     });
     $mmEvents.on(mmCoreEventLogout, function() {
         $mmLang.clearCustomStrings();
@@ -17038,6 +17038,8 @@ angular.module('mm.core.login')
             $mmLoginHelper.treatUserTokenError(siteurl, error);
         }).finally(function() {
             modal.dismiss();
+
+            $mmUtil.showToast('mm.core.unicodenotsupported', true, 8000);
         });
     };
 
@@ -17048,7 +17050,7 @@ angular.module('mm.core.login')
          var c="moodle_mobile_app";
            var d="http://courses.unp.education/admin/tool/mobile/launch.php";
           
-         $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000); 
+         $mmUtil.showToast('mm.core.unicodenotsupported', true, 8000); 
        // $mmLoginHelper.openBrowserForSSOLogin(a,b,c,d);
 
 
