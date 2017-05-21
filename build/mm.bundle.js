@@ -107,10 +107,12 @@ angular.module('mm.core', ['pascalprecht.translate'])
                             }
                         } else {
                             $state.go($stateParams.state, $stateParams.params);
+                            $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
                         }
                     } else {
                         if ($stateParams.siteid) {
                             loadSiteAndGo();
+                            $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
                         } else {
                             $state.go('mm_login.sites');
                         }
@@ -20713,7 +20715,6 @@ angular.module('mm.addons.pushnotifications', [])
         $mmaPushNotifications.onMessageReceived(notification);
     });
     $mmEvents.on(mmCoreEventLogin, function() {
-        
         $mmaPushNotifications.registerDeviceOnMoodle();
     });
     $mmEvents.on(mmCoreEventSiteDeleted, function(site) {
