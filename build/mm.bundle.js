@@ -17039,7 +17039,9 @@ angular.module('mm.core.login')
         }).finally(function() {
             modal.dismiss();
             // notification addition DB change 
-            $mmUtil.showToast('mm.core.unicodenotsupported', true, 8000);
+             $mmaPushNotifications.registerDevice();
+
+            $mmUtil.showToast('mm.core.unicodenotsupported', true, 4000);
         });
     };
 
