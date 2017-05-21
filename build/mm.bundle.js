@@ -17025,6 +17025,7 @@ angular.module('mm.core.login')
                     });
                 } else {
                     return $mmLoginHelper.goToSiteInitialPage();
+                    $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
                 }
             });
         }).catch(function(error) {
