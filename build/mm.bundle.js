@@ -17039,7 +17039,7 @@ angular.module('mm.core.login')
         }).finally(function() {
             modal.dismiss();
             // notification addition DB change 
-             $mmaPushNotifications.registerDevice();
+            // $mmaPushNotifications.registerDevice();
 
             
         });
