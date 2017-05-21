@@ -3662,18 +3662,18 @@ angular.module('mm.core')
 
     $ionicPlatform.ready(function() {
 
-         $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
+
         $mmLang.getCurrentLanguage().then(function(language) {
             $translate.use(language);
             moment.locale(language);
-
-            $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
+            
         });
     });
     $mmEvents.on(mmCoreEventLogin, loadCustomStrings);
     $mmEvents.on(mmCoreEventSiteUpdated, function(siteId) {
         if (siteId == $mmSite.getId()) {
             loadCustomStrings();
+            $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
         }
     });
     $mmEvents.on(mmCoreEventLogout, function() {
