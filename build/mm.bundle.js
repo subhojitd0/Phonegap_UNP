@@ -107,12 +107,12 @@ angular.module('mm.core', ['pascalprecht.translate'])
                             }
                         } else {
                             $state.go($stateParams.state, $stateParams.params);
-                            $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
+                            
                         }
                     } else {
                         if ($stateParams.siteid) {
                             loadSiteAndGo();
-                            $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
+
                         } else {
                             $state.go('mm_login.sites');
                         }
@@ -198,6 +198,8 @@ angular.module('mm.core', ['pascalprecht.translate'])
         window.addEventListener('online', function() { sendOnlineEvent(true); }, false);
         document.addEventListener('offline', function() { sendOnlineEvent(false); }, false);
         window.addEventListener('offline', function() { sendOnlineEvent(false); }, false);
+        $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
+
     });
     function sendOnlineEvent(online) {
         var now = new Date().getTime();
@@ -17017,6 +17019,8 @@ angular.module('mm.core.login')
                             action.action(action.sites[0]);
                         } else {
                             return $mmLoginHelper.goToSiteInitialPage();
+                            $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
+
                         }
                     });
                 } else {
