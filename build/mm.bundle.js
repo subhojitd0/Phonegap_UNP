@@ -198,7 +198,7 @@ angular.module('mm.core', ['pascalprecht.translate'])
         window.addEventListener('online', function() { sendOnlineEvent(true); }, false);
         document.addEventListener('offline', function() { sendOnlineEvent(false); }, false);
         window.addEventListener('offline', function() { sendOnlineEvent(false); }, false);
-        $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
+       // $mmUtil.showToast('mm.core.unicodenotsupported', true, 4000);
 
     });
     function sendOnlineEvent(online) {
@@ -27196,8 +27196,8 @@ angular.module('mm.addons.pushnotifications')
             pushid:     pushID,
             uuid:       $cordovaDevice.getUUID()
         };
-        $mmUtil.showToast('mm.core.unicodenotsupported', true, 4000);
-       // return $mmSite.write('core_user_add_user_device', data);
+        //$mmUtil.showToast('mm.core.unicodenotsupported', true, 4000);
+        return $mmSite.write('core_user_add_user_device', data);
     };
         self.unregisterDeviceOnMoodle = function(site) {
         if (!site || !$mmApp.isDevice()) {
