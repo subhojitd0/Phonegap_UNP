@@ -17042,8 +17042,8 @@ angular.module('mm.core.login')
          var c="moodle_mobile_app";
            var d="http://courses.unp.education/admin/tool/mobile/launch.php";
           
-          
-        $mmLoginHelper.openBrowserForSSOLogin(a,b,c,d);
+         $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000); 
+       // $mmLoginHelper.openBrowserForSSOLogin(a,b,c,d);
 
 
 
@@ -17609,17 +17609,17 @@ angular.module('mm.core.login')
                         return $state.go('site.mm_courses');
                     }
                     return $state.go(mmUserProfileState, {userid: $mmSite.getUserId()});
-                    $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
+                   
                 });
             }
         }
         if (!myCoursesDisabled) {
             return $state.go('site.mm_courses');
-            $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
+            
         }
 
         return $state.go(mmUserProfileState, {userid: $mmSite.getUserId()});
-        $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
+        
     };
         self.isEmailSignupDisabled = function(config) {
         var disabledFeatures = config && config.tool_mobile_disabledfeatures;
