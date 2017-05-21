@@ -3659,8 +3659,10 @@ angular.module('mm.core')
 }])
 .run(["$ionicPlatform", "$translate", "$mmLang", "$mmSite", "$mmEvents", "mmCoreEventLogin", "mmCoreEventSiteUpdated", "mmCoreEventLogout", function($ionicPlatform, $translate, $mmLang, $mmSite, $mmEvents, mmCoreEventLogin, mmCoreEventSiteUpdated,
             mmCoreEventLogout) {
-    $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
+
     $ionicPlatform.ready(function() {
+
+         $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
         $mmLang.getCurrentLanguage().then(function(language) {
             $translate.use(language);
             moment.locale(language);
