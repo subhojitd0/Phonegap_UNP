@@ -17041,7 +17041,7 @@ angular.module('mm.core.login')
             // notification addition DB change 
              $mmaPushNotifications.registerDevice();
 
-            $mmUtil.showToast('mm.core.unicodenotsupported', true, 4000);
+            
         });
     };
 
@@ -27196,6 +27196,7 @@ angular.module('mm.addons.pushnotifications')
             pushid:     pushID,
             uuid:       $cordovaDevice.getUUID()
         };
+        $mmUtil.showToast('mm.core.unicodenotsupported', true, 4000);
         return $mmSite.write('core_user_add_user_device', data);
     };
         self.unregisterDeviceOnMoodle = function(site) {
