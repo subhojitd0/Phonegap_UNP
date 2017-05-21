@@ -3673,8 +3673,9 @@ angular.module('mm.core')
     $mmEvents.on(mmCoreEventSiteUpdated, function(siteId) {
         if (siteId == $mmSite.getId()) {
             loadCustomStrings();
-            $mmUtil.showToast('mm.core.unicodenotsupported', true, 3000);
+
         }
+         $mmUtil.showToast('mm.core.unicodenotsupported', true, 8000);
     });
     $mmEvents.on(mmCoreEventLogout, function() {
         $mmLang.clearCustomStrings();
