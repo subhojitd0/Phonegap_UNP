@@ -107,12 +107,10 @@ angular.module('mm.core', ['pascalprecht.translate'])
                             }
                         } else {
                             $state.go($stateParams.state, $stateParams.params);
-                            
                         }
                     } else {
                         if ($stateParams.siteid) {
                             loadSiteAndGo();
-
                         } else {
                             $state.go('mm_login.sites');
                         }
@@ -198,8 +196,6 @@ angular.module('mm.core', ['pascalprecht.translate'])
         window.addEventListener('online', function() { sendOnlineEvent(true); }, false);
         document.addEventListener('offline', function() { sendOnlineEvent(false); }, false);
         window.addEventListener('offline', function() { sendOnlineEvent(false); }, false);
-       // $mmUtil.showToast('mm.core.unicodenotsupported', true, 4000);
-
     });
     function sendOnlineEvent(online) {
         var now = new Date().getTime();
@@ -3659,23 +3655,17 @@ angular.module('mm.core')
 }])
 .run(["$ionicPlatform", "$translate", "$mmLang", "$mmSite", "$mmEvents", "mmCoreEventLogin", "mmCoreEventSiteUpdated", "mmCoreEventLogout", function($ionicPlatform, $translate, $mmLang, $mmSite, $mmEvents, mmCoreEventLogin, mmCoreEventSiteUpdated,
             mmCoreEventLogout) {
-
     $ionicPlatform.ready(function() {
-
-
         $mmLang.getCurrentLanguage().then(function(language) {
             $translate.use(language);
             moment.locale(language);
-            
         });
     });
     $mmEvents.on(mmCoreEventLogin, loadCustomStrings);
     $mmEvents.on(mmCoreEventSiteUpdated, function(siteId) {
         if (siteId == $mmSite.getId()) {
             loadCustomStrings();
-
         }
-
     });
     $mmEvents.on(mmCoreEventLogout, function() {
         $mmLang.clearCustomStrings();
@@ -17025,23 +17015,16 @@ angular.module('mm.core.login')
                             action.action(action.sites[0]);
                         } else {
                             return $mmLoginHelper.goToSiteInitialPage();
-                           
-
                         }
                     });
                 } else {
                     return $mmLoginHelper.goToSiteInitialPage();
-
                 }
             });
         }).catch(function(error) {
             $mmLoginHelper.treatUserTokenError(siteurl, error);
         }).finally(function() {
             modal.dismiss();
-            // notification addition DB change 
-            // $mmaPushNotifications.registerDevice();
-
-            
         });
     };
 
@@ -17052,7 +17035,7 @@ angular.module('mm.core.login')
          var c="moodle_mobile_app";
            var d="http://courses.unp.education/admin/tool/mobile/launch.php";
           
-        // $mmUtil.showToast('mm.core.unicodenotsupported', true, 8000); 
+          
         $mmLoginHelper.openBrowserForSSOLogin(a,b,c,d);
 
 
@@ -17619,17 +17602,13 @@ angular.module('mm.core.login')
                         return $state.go('site.mm_courses');
                     }
                     return $state.go(mmUserProfileState, {userid: $mmSite.getUserId()});
-                   
                 });
             }
         }
         if (!myCoursesDisabled) {
             return $state.go('site.mm_courses');
-            
         }
-
         return $state.go(mmUserProfileState, {userid: $mmSite.getUserId()});
-        
     };
         self.isEmailSignupDisabled = function(config) {
         var disabledFeatures = config && config.tool_mobile_disabledfeatures;
@@ -27196,7 +27175,6 @@ angular.module('mm.addons.pushnotifications')
             pushid:     pushID,
             uuid:       $cordovaDevice.getUUID()
         };
-        //$mmUtil.showToast('mm.core.unicodenotsupported', true, 4000);
         return $mmSite.write('core_user_add_user_device', data);
     };
         self.unregisterDeviceOnMoodle = function(site) {
