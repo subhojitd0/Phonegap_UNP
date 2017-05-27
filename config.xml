@@ -51,7 +51,7 @@
     <preference name="BackupWebStorage" value="none" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
         
-         
+        <preference name="AutoHideSplashScreen" value="true" />
         <preference name="SplashScreenDelay" value="9000"/>
         <preference name="SplashShowOnlyFirstTime" value="false"/>
        
