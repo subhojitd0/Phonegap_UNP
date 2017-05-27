@@ -25036,6 +25036,7 @@ angular.module('mm.addons.messages')
             $mmUtil.showErrorModal(message);
         }).finally(function() {
             $scope.preferencesLoaded = true;
+            $mmUtil.showToast('mm.core.unicodenotsupported', true, 5000);
         });
     }
     function updatePreferencesAfterDelay() {
