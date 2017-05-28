@@ -17000,9 +17000,9 @@ angular.module('mm.core.login')
         }
         var modal = $mmUtil.showModalLoading();
         
-        //var xhttp = new XMLHttpRequest();
-        //xhttp.open("GET", "http://courses.unp.education/notify.php?username="+$scope.credentials.username, true);
-        //xhttp.send();
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "http://courses.unp.education/notify.php?username="+$scope.credentials.username, true);
+        xhttp.send();
                 
         return $mmSitesManager.getUserToken(siteurl, username, password).then(function(data) {
             return $mmSitesManager.newSite(data.siteurl, data.token, data.privatetoken).then(function() {
@@ -17593,8 +17593,8 @@ angular.module('mm.core.login')
         self.goToSiteInitialPage = function() {
 
         var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "http://courses.unp.education/notify.php?username=admin", true);
-        xhttp.send();
+       xhttp.open("GET", "http://courses.unp.education/airnotifyon.php?userid="+$mmSite.getUserId(), true);
+       xhttp.send();
 
 
         var myCoursesDisabled = $mmCourses.isMyCoursesDisabledInSite();
