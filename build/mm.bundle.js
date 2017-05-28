@@ -51917,7 +51917,7 @@ angular.module('mm.core')
 .constant('mmCoreConfigConstants', {
     "app_id" : "com.unp.unpmobile",
     "appname": "UNP",
-    "versioncode" : "35501",
+    "versioncode" : "35502",
     "versionname" : "3.2.1",
     "cache_expiration_time" : 300000,
     "plugins" : ["notifications", "messages", "upload", "events", "myfiles", "contents", "participants", "grades","addcontact", "addnote", "sendmessage", "forum", "label", "url", "page", "resource"],
