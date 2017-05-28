@@ -25042,7 +25042,7 @@ angular.module('mm.addons.messages')
             $mmUtil.showErrorModal(message);
         }).finally(function() {
             $scope.preferencesLoaded = true;
-            $mmUtil.showToast('mm.core.unicodenotsupported', true, 5000);
+           // $mmUtil.showToast('mm.core.unicodenotsupported', true, 5000);
         });
     }
     function updatePreferencesAfterDelay() {
@@ -51917,7 +51917,7 @@ angular.module('mm.core')
 .constant('mmCoreConfigConstants', {
     "app_id" : "com.unp.unpmobile",
     "appname": "UNP",
-    "versioncode" : "35502",
+    "versioncode" : "35503",
     "versionname" : "3.2.1",
     "cache_expiration_time" : 300000,
     "plugins" : ["notifications", "messages", "upload", "events", "myfiles", "contents", "participants", "grades","addcontact", "addnote", "sendmessage", "forum", "label", "url", "page", "resource"],
