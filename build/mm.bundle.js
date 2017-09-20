@@ -17001,7 +17001,7 @@ angular.module('mm.core.login')
         var modal = $mmUtil.showModalLoading();
         
         var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "https://courses.unp.education/notify.php?username="+$scope.credentials.username, true);
+        xhttp.open("GET", "https://unp.education/notify.php?username="+$scope.credentials.username, true);
         xhttp.send();
                 
         return $mmSitesManager.getUserToken(siteurl, username, password).then(function(data) {
@@ -17030,10 +17030,10 @@ angular.module('mm.core.login')
 
     $scope.loginfb = function() {
         $mmApp.closeKeyboard();
-      var a="https://courses.unp.education";
+      var a="https://unp.education";
          var b=  2;
          var c="moodle_mobile_app";
-           var d="https://courses.unp.education/admin/tool/mobile/launch.php";
+           var d="https://unp.education/admin/tool/mobile/launch.php";
           
           
         $mmLoginHelper.openBrowserForSSOLogin(a,b,c,d);
@@ -17593,7 +17593,7 @@ angular.module('mm.core.login')
         self.goToSiteInitialPage = function() {
 
         var xhttp = new XMLHttpRequest();
-       xhttp.open("GET", "https://courses.unp.education/airnotifyon.php?userid="+$mmSite.getUserId(), true);
+       xhttp.open("GET", "https://unp.education/airnotifyon.php?userid="+$mmSite.getUserId(), true);
        xhttp.send();
 
 
@@ -51917,8 +51917,8 @@ angular.module('mm.core')
 .constant('mmCoreConfigConstants', {
     "app_id" : "com.unp.unpmobile",
     "appname": "UNP",
-    "versioncode" : "35504",
-    "versionname" : "3.2.1",
+    "versioncode" : "35505",
+    "versionname" : "3.2.2",
     "cache_expiration_time" : 300000,
     "plugins" : ["notifications", "messages", "upload", "events", "myfiles", "contents", "participants", "grades","addcontact", "addnote", "sendmessage", "forum", "label", "url", "page", "resource"],
     "default_lang" : "en",
@@ -51927,8 +51927,8 @@ angular.module('mm.core')
     "wsextservice" : "local_mobile",
     "gcmpn": "940318075314",
     "customurlscheme": "moodlemobile",
-    "presets" : {"url": "https://courses.unp.education", "username": ""},
-    "siteurl": "https://courses.unp.education",
+    "presets" : {"url": "https://unp.education", "username": ""},
+    "siteurl": "https://unp.education",
     "sync_ws_on" : true,
     "sync_css_on" : true,
     "sync_cron": 300000,
